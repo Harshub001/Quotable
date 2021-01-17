@@ -7,18 +7,16 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.task.quotable.R
-import com.task.quotable.model.QuoteData
-import com.task.quotable.model.Result
+import com.task.quotable.data.QuoteResult
 import kotlinx.android.synthetic.main.quote_row.view.*
 
-class QuoteListAdapter : PagingDataAdapter<Result, QuoteListAdapter.ViewHolder>(DataDifferntiator) {
+class QuoteListAdapter : PagingDataAdapter<QuoteResult, QuoteListAdapter.ViewHolder>(DataDifferntiator) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.itemView.textViewName.text = getItem(position)?.content
-
+       holder.itemView.txt_quotes.text = getItem(position)?.content
     }
 
 
@@ -30,13 +28,13 @@ class QuoteListAdapter : PagingDataAdapter<Result, QuoteListAdapter.ViewHolder>(
         )
     }
 
-    object DataDifferntiator : DiffUtil.ItemCallback<Result>() {
+    object DataDifferntiator : DiffUtil.ItemCallback<QuoteResult>() {
 
-        override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areItemsTheSame(oldItem: QuoteResult, newItem: QuoteResult): Boolean {
             return oldItem.content == newItem.content
         }
 
-        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areContentsTheSame(oldItem: QuoteResult, newItem: QuoteResult): Boolean {
             return oldItem == newItem
         }
     }

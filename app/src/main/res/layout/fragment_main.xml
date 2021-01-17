@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.MainFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#32BB86FC">
+        <TextView
+            android:id="@+id/txt_hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="25dp"
+            android:text="Hello Folks, Explore Quotes By Clicking On Below Items...!!!"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:padding="22dp"
+            android:gravity="center"/>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/quotes_card_view"
+            app:strokeColor="@color/app_theme"
+            android:layout_below="@+id/txt_hello"
+            app:strokeWidth="4dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="20dp"
+            app:cardCornerRadius="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/quotes" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/authors_card_view"
+            app:strokeWidth="4dp"
+            app:strokeColor="@color/app_theme"
+            android:layout_below="@+id/quotes_card_view"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="20dp"
+            app:cardCornerRadius="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/authors"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/tags_card_view"
+            app:strokeColor="@color/app_theme"
+            app:strokeWidth="4dp"
+            android:layout_below="@+id/authors_card_view"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="20dp"
+            app:cardCornerRadius="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/tags"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

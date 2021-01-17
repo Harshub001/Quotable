@@ -1,4 +1,4 @@
-package com.task.quotable.ui
+package com.task.quotable.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
