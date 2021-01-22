@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.AuthorsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".quotablebycouroutines.ui.fragments.AuthorsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/authorRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-   <RelativeLayout
-        android:id="@+id/progressLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff">
-        <ProgressBar
-            android:id="@+id/progressBar1"
+        android:layout_height="match_parent"/>
+
+    <ProgressBar
+            android:id="@+id/authorProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
-    </RelativeLayout>
-</RelativeLayout>
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+          android:id="@+id/author_btn_retry"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:visibility="gone"
+          android:text="Retry"
+          android:textSize="40dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
