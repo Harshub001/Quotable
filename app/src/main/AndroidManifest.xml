@@ -12,9 +12,9 @@
         android:theme="@style/Theme.Quotable">
 
 
-        <activity android:name=".quotablebycouroutines.ui.activity.MainActivity"/>
+        <activity android:name=".bycouroutines.ui.activity.MainActivity"/>
         <activity
-            android:name=".quotablebycouroutines.ui.activity.SplashScreenActivity"
+            android:name=".bycouroutines.ui.activity.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

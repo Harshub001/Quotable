@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".quotablebycouroutines.ui.fragments.QuotesFragment">
+    tools:context=".byrxjava.quotesbyrx.quoteuirx.QuotesFragmentRx">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/quoteRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-        <ProgressBar
+       <ProgressBar
             android:id="@+id/quotesProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -19,6 +19,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/txt_error_popular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Connection Problem!!"
+        android:visibility="gone"/>
+
     <Button
         android:id="@+id/quotes_btn_retry"
         android:layout_width="wrap_content"

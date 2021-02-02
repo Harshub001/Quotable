@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.task.quotable.quotablebycouroutines.ui.fragments.MainFragment"
+        android:name="com.task.quotable.bycouroutines.ui.fragments.MainFragment"
         android:label="Quotable"
         tools:layout="@layout/fragment_main" >
         <action
@@ -22,17 +22,17 @@
     </fragment>
     <fragment
         android:id="@+id/quotesFragment"
-        android:name="com.task.quotable.quotablebycouroutines.ui.fragments.QuotesFragment"
+        android:name="com.task.quotable.byrxjava.quotesbyrx.quoteuirx.QuotesFragmentRx"
         android:label="Quotes"
         tools:layout="@layout/fragment_quotes" />
     <fragment
         android:id="@+id/authorFragment"
-        android:name="com.task.quotable.quotablebycouroutines.ui.fragments.AuthorsFragment"
+        android:name="com.task.quotable.byrxjava.authorsbyrx.authoruirx.AuthorsFragmentRx"
         android:label="Authors"
         tools:layout="@layout/fragment_author" />
     <fragment
         android:id="@+id/tagsFragment"
-        android:name="com.task.quotable.quotablebycouroutines.ui.fragments.TagsFragment"
+        android:name="com.task.quotable.byrxjava.tagsbyrx.TagsFragmentRx"
         android:label="Tags"
         tools:layout="@layout/fragment_tags" />
 </navigation>
