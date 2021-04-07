@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motion_layout_splash_screen"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="#4BBB86FC"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_splash_scene"
     tools:context=".bycouroutines.ui.activity.SplashScreenActivity">
 
     <ImageView
-        android:id="@+id/imgLogo"
+        android:id="@+id/quotable_icon"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
-        android:src="@drawable/quotable_icon" />
+        android:src="@drawable/quotable_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtQuotable"
+        android:id="@+id/quotable_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imgLogo"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="QUOTABLE"
         android:textColor="#FC550A45"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quotable_icon" />
 
-</RelativeLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

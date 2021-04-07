@@ -1,7 +1,5 @@
 package com.task.quotable.bycouroutines.data.datasource
 
-
-
 import androidx.paging.PagingSource
 import com.task.quotable.data.QuoteResult
 import com.task.quotable.bycouroutines.service.QuotesAPIService

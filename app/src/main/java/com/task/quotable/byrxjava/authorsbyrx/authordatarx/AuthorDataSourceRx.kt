@@ -21,7 +21,7 @@ class AuthorDataSourceRx(var authorApiServiceRx: AuthorApiServiceRx) : RxPagingS
         return LoadResult.Page(
                 data = response.results,
                 prevKey = if (position == 1) null else position - 1,
-                nextKey =  if(position == response.count) null else position+1
+                nextKey =  if(position == response.count) null else position + 1
         )
     }
 }

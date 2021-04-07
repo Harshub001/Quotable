@@ -25,11 +25,11 @@ class TagsListAdapter(private val tagsResult: ArrayList<TagsResult>): RecyclerVi
      }
   }
 
-    class TagsViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
+class TagsViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
     private val title: TextView = itemView.findViewById(R.id.txt_tags)
 
     fun bind(tags: TagsResult) {
         title.text = tags.name
-     }
+    }
 
  }

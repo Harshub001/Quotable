@@ -19,6 +19,13 @@ class AuthorsListAdapter : PagingDataAdapter<AuthorResult, AuthorsListAdapter.Au
     override fun onBindViewHolder(holder: AuthorsViewHolder, position: Int) {
         holder.itemView.txt_author_name.text = getItem(position)?.name
         holder.itemView.txt_author_bio.text = getItem(position)?.bio
+        val isExpandable: Boolean = getItem(position)?.expandable == true
+        holder.itemView.linear_layout_bio.visibility = if(isExpandable) View.VISIBLE else View.GONE
+        holder.itemView.dropdown_arrow.rotation = if(isExpandable) 180f else 0f
+        holder.itemView.linear_layout_name.setOnClickListener {
+            getItem(position)?.expandable = !(getItem(position)?.expandable)!!
+            notifyItemChanged(position)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AuthorsViewHolder {
@@ -31,7 +38,7 @@ class AuthorsListAdapter : PagingDataAdapter<AuthorResult, AuthorsListAdapter.Au
 
     object DataDifferentiators : DiffUtil.ItemCallback<AuthorResult>() {
         override fun areItemsTheSame(oldItem: AuthorResult, newItem: AuthorResult): Boolean {
-            return oldItem.bio == newItem.bio
+            return oldItem.name == newItem.name
         }
 
         override fun areContentsTheSame(oldItem: AuthorResult, newItem: AuthorResult): Boolean {

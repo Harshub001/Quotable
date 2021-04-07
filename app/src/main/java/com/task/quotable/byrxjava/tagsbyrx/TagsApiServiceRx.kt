@@ -14,7 +14,7 @@ interface TagsApiServiceRx {
 
     companion object {
         private const val BASE_URL = "https://api.quotable.io/"
-        fun create(): TagsApiServiceRx {
+        fun tagsCreate(): TagsApiServiceRx {
 
             val tagsRetrofit = Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_theme">#FC550A45</color>
     <color name="app_bc">#D5550A45</color>
+    <color name="app_splash">#DCF1D7FA</color>
 </resources>

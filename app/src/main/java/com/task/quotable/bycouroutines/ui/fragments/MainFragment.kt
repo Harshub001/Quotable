@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
 import com.task.quotable.R
+import com.task.quotable.bycouroutines.ui.activity.MainActivity
 
 
 class MainFragment : Fragment() {

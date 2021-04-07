@@ -20,7 +20,7 @@ class TagsFragmentRx: Fragment() {
     lateinit var tagsProgressBar: ProgressBar
 
     private val tagsClient by lazy {
-        TagsApiServiceRx.create()
+        TagsApiServiceRx.tagsCreate()
     }
 
     var disposable: Disposable? = null

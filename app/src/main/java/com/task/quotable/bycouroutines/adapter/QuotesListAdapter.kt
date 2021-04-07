@@ -1,8 +1,11 @@
 package com.task.quotable.bycouroutines.adapter
 
+import android.annotation.SuppressLint
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -16,8 +19,18 @@ class QuotesListAdapter : PagingDataAdapter<QuoteResult, QuotesListAdapter.Quote
 
     class QuotesViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: QuotesViewHolder, position: Int) {
-       holder.itemView.txt_quotes.text = getItem(position)?.content
+        holder.itemView.txt_quotes.text = getItem(position)?.content
+        holder.itemView.txt_quotes_author.text = "~ by " + getItem(position)?.author
+        val isExpandable: Boolean = getItem(position)?.expandable == true
+            holder.itemView.txt_quotes_expand.visibility = if(isExpandable) View.VISIBLE else View.GONE
+            holder.itemView.txt_quotes.visibility = if(isExpandable) View.GONE else View.VISIBLE
+            holder.itemView.txt_quotes_expand.text = getItem(position)?.content
+            holder.itemView.quotes_txt_cardView.setOnClickListener {
+                getItem(position)?.expandable = !(getItem(position)?.expandable)!!
+                notifyItemChanged(position)
+            }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuotesViewHolder {
@@ -37,10 +50,5 @@ class QuotesListAdapter : PagingDataAdapter<QuoteResult, QuotesListAdapter.Quote
             return oldItem == newItem
         }
     }
-    companion object {
-        // Define Loading ViewType
-        val LOADING_ITEM = 0
-        // Define Movie ViewType
-        val MOVIE_ITEM = 1
-    }
+
 }
